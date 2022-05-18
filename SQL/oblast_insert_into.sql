@@ -1,0 +1,28 @@
+INSERT INTO otgalbum_oblast (name, slug)
+VALUES
+
+    ('АР Крим', 'ar-krim'),
+    ('Вінницька', 'vinnicka'),
+    ('Волинська', 'volinska'),
+    ('Дніпропетровська', 'dnipropetrovska'),
+    ('Донецька', 'donecka'),
+    ('Житомирська', 'zhitomirska'),
+    ('Закарпатська', 'zakarpatska'),
+    ('Запорізька', 'zaporizka'),
+    ('Івано-Франківська', 'ivano-frankivska'),
+    ('Київська', 'kiyivska'),
+    ('Кіровоградська', 'kirovogradska'),
+    ('Луганська', 'luganska'),
+    ('Львівська', 'lvivska'),
+    ('Миколаївська', 'mikolayivska'),
+    ('Одеська', 'odeska'),
+    ('Полтавська', 'poltavska'),
+    ('Рівненська', 'rivnenska'),
+    ('Сумська', 'sumska'),
+    ('Тернопільська', 'ternopilska'),
+    ('Харківська', 'harkivska'),
+    ('Херсонська', 'hersonska'),
+    ('Хмельницька', 'hmelnicka'),
+    ('Черкаська', 'cherkaska'),
+    ('Чернівецька', 'chernivecka'),
+    ('Чернігівська', 'chernigivska');

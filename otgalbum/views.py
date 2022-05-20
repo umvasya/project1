@@ -68,7 +68,7 @@ class SearchResultsView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        object_list = Geoportal.objects.filter(gromada__title__icontains=query)
+        object_list = Geoportal.objects.filter(gromada__title__icontains=query, type_geoportal='Публічний')
         return object_list
 
     # def get_context_data(self, *, object_list=None, **kwargs):

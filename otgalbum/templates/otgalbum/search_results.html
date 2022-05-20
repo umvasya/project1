@@ -189,7 +189,7 @@
                   </li>
                   {% get_list_oblasts as oblasts %}
                   {% for item in oblasts %}
-                  <li><a class="dropdown-item" href="/oblast/{{ item.pk }}">{{ item.name }}<span class="badge rounded-pill bg-light text-dark">{{item.cnt}}</span></a></li>
+                  <li><a class="dropdown-item" href="/{{ item.pk }}">{{ item.name }}<span class="badge rounded-pill bg-light text-dark">{{item.cnt}}</span></a></li>
                   {% endfor %}
 
                 </ul>

@@ -60,7 +60,7 @@ class Geoportal(models.Model):
     class Meta:
         verbose_name_plural = 'Геопортали'
         verbose_name = 'Геопортал'
-        ordering = ['gromada']
+        ordering = ['-views']
 
     def get_absolute_url(self):
         return reverse_lazy('by_oblast', kwargs={"pk": self.pk})

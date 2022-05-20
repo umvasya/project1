@@ -7,7 +7,7 @@ register = template.Library()
 
 @register.simple_tag(name='get_list_oblasts')
 def get_oblasts():
-    return Oblast.objects.filter(gromada__geoportal__type_geoportal='Публічний').order_by('name').distinct().annotate(cnt=Count('gromada'))
+    return Oblast.objects.filter(gromada__geoportal__type_geoportal='Публічний').order_by('id').distinct().annotate(cnt=Count('gromada'))
     # return Oblast.objects.select_related().annotate(cnt=Count('gromada')).filter(cnt__gt=0).filter(gromada__geoportal__type_geoportal='Публічний').order_by('id')
     # return Oblast.objects.annotate(cnt=Count('gromada')).filter(cnt__gt=0, ).order_by('id')
 

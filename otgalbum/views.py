@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from rest_framework import generics, viewsets
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
@@ -6,7 +7,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from .forms import UserLoginForm
 from .models import Oblast, Gromada, Geoportal
-from django.db.models import Count
+from django.db.models import Count, F
 
 from otgalbum.serializers import GromadaSerializer
 
@@ -15,7 +16,6 @@ class AllPortals(ListView):
     model = Geoportal
     template_name = 'otgalbum/index.html'
     context_object_name = 'geoportals'
-    # queryset = Geoportal.objects.select_related('gromada__geoportal')
     paginate_by = 12
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -40,7 +40,7 @@ class PortalByOblast(ListView):
 
     def get_queryset(self):
         return Geoportal.objects.select_related().filter(gromada__oblast__id=self.kwargs['oblast_id'], type_geoportal='Публічний')
-        # return Geoportal.objects.filter(oblast_id=self.kwargs['oblast_id']).select_related('gromada__oblast_id')
+
 
 def portal_user_list(request):
     if request.user.is_authenticated:
@@ -118,3 +118,5 @@ class GromadaViewSet(viewsets.ModelViewSet):
     serializer_class = GromadaSerializer
     permission_classes = (IsAuthenticatedOrReadOnly, )
     pagination_class = GromadaAPIListPagination
+
+

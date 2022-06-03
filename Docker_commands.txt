@@ -1,0 +1,17 @@
+// Створити docker-image
+docker build -t project1 .
+
+// Список образів
+docker image ls
+
+//Запустити образ
+docker run project1
+
+//Переглянути запущені образи
+docker ps -a
+
+//підписати образ
+docker tag project1 umvasya/project1_v1
+
+//Опублікувати
+docker push  umvasya/project1_v1
